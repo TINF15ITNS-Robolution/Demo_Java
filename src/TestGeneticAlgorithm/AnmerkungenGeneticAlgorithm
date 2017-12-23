@@ -1,0 +1,22 @@
+1. Population erzeugen
+	jede Population besteht aus einer Menge an Rockets
+		jeder Rocket besteht aus einer DNA, die die Richtung der nächsten Bewegung vorgibt
+
+2. Population durchspielen
+	über die Lebensdauer der Rockets (auch die Länge der DNA-Sequenz) drüber gehen und die Rockets jedes Mal bewegen
+		wenn sie in einer Wand / Ziel landen -> hier stoppen
+		
+3. Population bewerten (Fitness)
+	am Ende jeder Population die Fitness eines jeden Rocktes bewerten (=Entfernung zum Ziel errchnen und dem Rocket geben als 1/d)
+
+4. DNAPool erzeugen, welcher (mehrmals) basierend auf der Fitness Rockets der alten Generation enthält
+	dann daraus zwei Elternteile auswählen
+	er erhöht das Auftreten eines Rockets, welches das Zeil erreicht hat um den Faktor 10
+	
+5. Aus der DNA beider Elternteile wird nun die DNA des Kindes erzeugt
+	Im Video wählt er dazu einen Index iwo in dem DNA-Array aus und nimmt den vorderen Teil aus Elternteil A und den restlichen Teil von Elternteil B
+	das finde ich aber genetisch nicht so schlau:
+		der vordere Teil der DNA (der sich schon verbessert hat, wird vom einen koomplett übernommen und der unverbesserte teil vom anderen ... durch die zufällige Wahl des Trennpunktes ists vlt trotzdem ganz gut
+		aber ich werde mal eine weitere Variante mit zufälliger Auswahl jeder DNAsequenz ob von A oder B implementieren
+	
+6. Mutation: ein Prozentsatz der DNA-Sequenzen wird zufällig neu befüllt
